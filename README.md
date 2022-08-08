@@ -17,5 +17,11 @@ npm run docs:dev
 目錄在 vuepress 的 config 檔中設定：
 docs/.vuepress/config.js
 
+## 發布
+```
+sh deploy.sh
+```
+執行完後會自動上傳到 https://cyanliin.github.io/unity-book/ ，約一分鐘後顯示新內容。
+
 ## 連結
 * [Unity 遊戲開發聖經](https://cyanliin.github.io/unity-book/)
