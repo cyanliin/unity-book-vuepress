@@ -1,0 +1,16 @@
+{
+  "name": "unitybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vuepress/plugin-medium-zoom": "^2.0.0-beta.49",
+    "vuepress": "^2.0.0-beta.43"
+  }
+}
