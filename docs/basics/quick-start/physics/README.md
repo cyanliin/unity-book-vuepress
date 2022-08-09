@@ -13,7 +13,10 @@
 
 出現 Rigidbody 元件之後，該物件就具備物理效果了。把場景上需要物理的物件都加上 Rigidbody 元件後按下執行看看！ Physics（物理）的詳細說明會在後面的章節深入討論。
 
-![play](./play.gif)
+![play1](./play1.gif)
+
+也可嘗試其他擺設：
+![play2](./play2.gif)
 
 <!-- 
 ```csharp
