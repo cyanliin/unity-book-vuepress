@@ -23,54 +23,67 @@ module.exports = {
               {
                 text: '建立 Unity 專案',
                 link: '/basics/quick-start/create-project/',
+                children: [],
               },
               {
                 text: '介面介紹',
                 link: '/basics/quick-start/panels/',
+                children: [],
               },
               {
                 text: '新增物件',
                 link: '/basics/quick-start/add-object/',
+                children: [],
               },
               {
                 text: '物件編輯 W E R',
                 link: '/basics/quick-start/basic-controls/',
+                children: [],
               },
               {
                 text: '操作編輯視角',
                 link: '/basics/quick-start/view-control/',
+                children: [],
               },
               {
                 text: '物件組成',
                 link: '/basics/quick-start/object-structure/',
+                children: [],
               },
               {
                 text: '🎨 改變顏色',
                 link: '/basics/quick-start/change-color/',
+                children: [],
               },
               {
                 text: '擺設遊戲畫面',
                 link: '/basics/quick-start/setup-scene/',
+                children: [],
               },
               {
                 text: '▶️ 執行遊戲',
                 link: '/basics/quick-start/play/',
+                children: [],
               },
               {
                 text: '添加物理效果',
                 link: '/basics/quick-start/physics/',
+                children: [],
               },
               {
                 text: '🎮 控制球體',
                 link: '/basics/quick-start/input/',
+                children: [],
               },
               {
                 text: '💥 碰撞偵測',
                 link: '/basics/quick-start/collision/',
+                children: [],
               },
               {
                 text: '🚀 發佈遊戲',
                 link: '/basics/quick-start/build-game/',
+                children: [],
               },
             ],
           },
@@ -78,7 +91,7 @@ module.exports = {
             text: '程式編輯軟體設定',
             collapsible: true,
             link: '/basics/code-editor',
-            children: []
+            children: [],
           },
           {
             text: '物件詳解',
@@ -87,6 +100,7 @@ module.exports = {
               {
                 text: '物件基礎',
                 link: '/basics/object/basic/',
+                children: [],
               },
             ],
           },
