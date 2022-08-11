@@ -23,79 +23,72 @@ module.exports = {
               {
                 text: '建立 Unity 專案',
                 link: '/basics/quick-start/create-project/',
-                children: [],
               },
               {
                 text: '介面介紹',
                 link: '/basics/quick-start/panels/',
-                children: [],
               },
               {
                 text: '新增物件',
                 link: '/basics/quick-start/add-object/',
-                children: [],
               },
               {
                 text: '物件編輯 W E R',
                 link: '/basics/quick-start/basic-controls/',
-                children: [],
               },
               {
                 text: '操作編輯視角',
                 link: '/basics/quick-start/view-control/',
-                children: [],
               },
               {
                 text: '物件組成',
                 link: '/basics/quick-start/object-structure/',
-                children: [],
               },
               {
-                text: '更換材質 (改變顏色)',
+                text: '🎨 改變顏色',
                 link: '/basics/quick-start/change-color/',
-                children: [],
               },
               {
-                text: '擺設場景',
+                text: '擺設遊戲畫面',
                 link: '/basics/quick-start/setup-scene/',
-                children: [],
               },
               {
-                text: '調整主攝影機',
-                link: '/basics/quick-start/main-camera/',
-                children: [],
-              },
-              {
-                text: '執行遊戲',
+                text: '▶️ 執行遊戲',
                 link: '/basics/quick-start/play/',
-                children: [],
               },
               {
                 text: '添加物理效果',
                 link: '/basics/quick-start/physics/',
-                children: [],
               },
               {
-                text: '控制球體',
+                text: '🎮 控制球體',
                 link: '/basics/quick-start/input/',
-                children: [],
               },
               {
-                text: '碰撞偵測',
+                text: '💥 碰撞偵測',
                 link: '/basics/quick-start/collision/',
-                children: [],
               },
               {
-                text: '發佈遊戲',
+                text: '🚀 發佈遊戲',
                 link: '/basics/quick-start/build-game/',
-                children: [],
               },
             ],
           },
           {
-            text: '物件結構',
+            text: '程式編輯軟體設定',
             collapsible: true,
-            children: [],
+            link: '/basics/code-editor',
+            children: []
+          },
+          {
+            text: '物件詳解',
+            collapsible: true,
+            children: [
+              {
+                text: '物件基礎',
+                link: '/basics/object/basic/',
+              },
+            ],
           },
           {
             text: '父子關係',
@@ -148,7 +141,7 @@ module.exports = {
             children: [],
           },
           {
-            text: 'Gizmos 開發輔助線',
+            text: 'Gizmos 開發輔助繪圖',
             collapsible: true,
             children: [],
           },
