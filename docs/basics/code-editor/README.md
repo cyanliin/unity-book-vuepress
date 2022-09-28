@@ -26,6 +26,17 @@ Unity 預設的程式編輯軟體是 Visual Studio，但該軟體較為龐大、
 | Unity Code Snippets | 提供 UnityEngine 的程式碼提示 |
 
 ## 步驟4：設定 omnisharp.useModernNet
-開啟設定畫面 (Preference / Settings)
+1. 開啟設定畫面 (Preference / Settings)
+2. 搜尋：omnisharp.useModernNet
+3. 並取消勾選
 
 ![omnisharp](./omnisharp.png)
+
+## 步驟5：Unity 指定 VS code 為程式編輯器
+1. 回到 Unity
+2. 開啟 Preference / External Tools
+3. 把 External Script Tool 改為 Visual Studio Code
+
+![external-tool](./external-tool.png)
+
+以後在 Unity 中點選 script 檔案兩下，就會自動開啟 VS Code 了！

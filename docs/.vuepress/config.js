@@ -88,12 +88,12 @@ module.exports = {
             ],
           },
           {
-            text: '程式編輯軟體設定',
+            text: 'Visual Studio Code 設定',
             collapsible: true,
             link: '/basics/code-editor',
             children: [],
           },
-          {
+          /*{
             text: '物件詳解',
             collapsible: true,
             children: [
@@ -118,8 +118,82 @@ module.exports = {
             text: 'Script 程式控制',
             collapsible: true,
             children: [],
+          },*/
+          {
+            text: '碰撞',
+            collapsible: true,
+            children: [
+              {
+                text: 'Unity 中的碰撞',
+                link: '/basics/collide/collide/',
+                children: [],
+              },
+              {
+                text: 'Collision',
+                link: '/basics/collide/collision/',
+                children: [],
+              },
+              {
+                text: 'Trigger',
+                link: '/basics/collide/trigger/',
+                children: [],
+              },
+            ],
           },
           {
+            text: '場景管理',
+            collapsible: true,
+            children: [
+              {
+                text: '場景切換',
+                link: '/basics/scene/switch-scene/',
+                children: [],
+              },
+              {
+                text: '關卡重新開始',
+                link: '/basics/scene/reload-level/',
+                children: [],
+              },
+            ],
+          },
+          {
+            text: '範例：滾球遊戲',
+            collapsible: true,
+            children: [
+              {
+                text: '設定場景',
+                link: '/basics/rolling-ball/setup-scene/',
+                children: [],
+              },
+              {
+                text: '打勾 Trigger',
+                link: '/basics/rolling-ball/enable-trigger/',
+                children: [],
+              },
+              {
+                text: '增加 Tag',
+                link: '/basics/rolling-ball/add-tag/',
+                children: [],
+              },
+              {
+                text: '球體控制與碰撞',
+                link: '/basics/rolling-ball/ball-control/',
+                children: [],
+              },
+              {
+                text: '指定下一關',
+                link: '/basics/rolling-ball/next-scene/',
+                children: [],
+              },
+              {
+                text: '執行遊戲',
+                link: '/basics/rolling-ball/play/',
+                children: [],
+              },
+            ],
+          },
+          
+          /*{
             text: '移動物件',
             collapsible: true,
             children: [],
@@ -173,12 +247,12 @@ module.exports = {
             text: '常用插件',
             collapsible: true,
             children: [],
-          },
+          },*/
         ],
     '/patterns/': [
           {
             text: '機率',
-            link: '',
+            link: 'probability/',
             children: [],
           },
           {
