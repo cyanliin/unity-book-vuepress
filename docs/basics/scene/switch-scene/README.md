@@ -1,7 +1,11 @@
 # 切換場景
 
 ## Unity 中的場景
-在 Unity 裡，遊戲場景是以 .unity 檔案的形式存在。建議專案時，預設的場景就是：專案資料夾/Assets/Scenes/SampleScene.unity （如下圖）。一個檔案即是一個遊戲場景（關卡）。
+在 Unity 裡，遊戲場景是以 .unity 檔案的形式存在。
+
+建立專案時，會自動產生一個預設的場景：/Assets/Scenes/SampleScene.unity （如下圖）。
+
+一個 .unity 檔案即是一個遊戲場景（關卡）。
 
 ![scene file](./scene-file.png)
 
