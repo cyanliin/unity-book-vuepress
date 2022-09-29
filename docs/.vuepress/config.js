@@ -192,7 +192,22 @@ module.exports = {
               },
             ],
           },
-          
+          {
+            text: '攝影機跟隨',
+            collapsible: true,
+            children: [
+              {
+                text: '使用 Script 控制',
+                link: '/basics/camera-follow/basic/',
+                children: [],
+              },
+              // {
+              //   text: '使用 Cinemachine',
+              //   link: '/basics/camera-follow/cinemachine/',
+              //   children: [],
+              // },
+            ],
+          },
           /*{
             text: '移動物件',
             collapsible: true,
