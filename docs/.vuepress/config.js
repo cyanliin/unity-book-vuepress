@@ -93,6 +93,12 @@ module.exports = {
             link: '/basics/code-editor',
             children: [],
           },
+          {
+            text: '程式風格 Code Style',
+            collapsible: true,
+            link: '/basics/code-style/',
+            children: [],
+          },
           /*{
             text: '物件詳解',
             collapsible: true,
@@ -206,6 +212,22 @@ module.exports = {
               //   link: '/basics/camera-follow/cinemachine/',
               //   children: [],
               // },
+            ],
+          },
+          {
+            text: '複製物件',
+            collapsible: true,
+            children: [
+              {
+                text: '複製方法說明',
+                link: '/basics/duplicate/duplicate-method/',
+                children: [],
+              },
+              {
+                text: '子彈射擊',
+                link: '/basics/duplicate/shooting/',
+                children: [],
+              },
             ],
           },
           /*{

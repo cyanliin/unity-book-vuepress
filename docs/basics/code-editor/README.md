@@ -40,3 +40,12 @@ Unity 預設的程式編輯軟體是 Visual Studio，但該軟體較為龐大、
 ![external-tool](./external-tool.png)
 
 以後在 Unity 中點選 script 檔案兩下，就會自動開啟 VS Code 了！
+
+
+## 開啟存檔自動格式化
+- 在 VS Code 的 Settings 搜尋 format
+- 打勾 Editor: Format On Save
+
+![format](./format.png)
+
+這會讓程式碼在存檔時，自動變得整齊。
