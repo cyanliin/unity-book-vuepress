@@ -21,6 +21,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     Rigidbody rb;
+    float lifeTime = 0; // 計時秒數
+
     void Start()
     {
         // 設定一個持續的方向力，往面對方向（forward = +z)
