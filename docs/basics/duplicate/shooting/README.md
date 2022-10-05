@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
 ## 槍身控制
 在槍群組增加 Script 名為 Gun.cs。
 
-我們要讓槍身會依照方向鍵左右移動，下面使用 Rigidbody 的 MovePosition 來實作：
+我們要讓槍身會依照方向鍵左右移動，下面使用 Rigidbody 的 velocity 來實作移動：
 
 ```csharp
 using System.Collections;
@@ -62,7 +62,6 @@ using UnityEngine;
 public class GunControl : MonoBehaviour
 {
     Rigidbody rb;
-    float x = 0; // 用來記錄 x 位置的變數
 
     void Start()
     {
@@ -71,25 +70,18 @@ public class GunControl : MonoBehaviour
 
     void Update()
     {
-        // 當有左右方向輸入時
+        // 用方向鍵左右移動槍
         float h = Input.GetAxis("Horizontal");
-        if (h != 0)
-        {
-            // 目前位置 加上 方向量(-1~1) * 10
-            x = x + h * 10 * Time.deltaTime;
-
-            // 使用 Rigidbody 的 MovePosition 指定要移動到的明確座標
-            rb.MovePosition(new Vector3(x, 0, 0));
-        }
+        rb.velocity = new Vector3( h * 5f,  0,  0);
     }
 }
 ```
 ![gun move](./gun-move.gif)
 
-:::tip MovePosition 與 AddForce
-與 AddForce 加一個作用力不同，MovePosition 是直接指定坐標，這樣的方式會帶來**更好的操控度**，但如果和其他物品發生碰撞時也會出現比較不自然的動作。
+:::tip velocity 與 AddForce
+Unity 會計算所有作用力，最後得出一個剛體的 velocity (速率) 才進行移動。所以 AddForce 只是往剛體上添加一個力而已。
 
-如果需要與其他物件較多互動時，建議還是以 AddForce 為主要移動方式為佳。
+velocity 也可以直接被指定，這樣的方式會帶來**更好的操控度**，但也等同忽略了其他作用力，如果需要與其他物件較多互動時，建議還是以 AddForce 為主要移動方式為佳。
 :::
 
 ## 發射子彈
