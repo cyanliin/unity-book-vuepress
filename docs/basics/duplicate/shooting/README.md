@@ -100,7 +100,7 @@ using UnityEngine;
 public class GunControl : MonoBehaviour
 {
     Rigidbody rb;
-    float x = 0; // 用來記錄 x 位置的變數
+
     public GameObject bullet; // 子彈來源 (在Unity介面中拖入)
     public GameObject firePoint; // 發射參考點 (在Unity介面中拖入)
 
@@ -111,16 +111,9 @@ public class GunControl : MonoBehaviour
 
     void Update()
     {
-        // 當有左右方向輸入時
+        // 用方向鍵左右移動槍
         float h = Input.GetAxis("Horizontal");
-        if (h != 0)
-        {
-            // 目前位置 加上 方向量(-1~1) * 10
-            x = x + h * 10 * Time.deltaTime;
-
-            // 使用 Rigidbody 的 MovePosition 指定要移動到的明確座標
-            rb.MovePosition(new Vector3(x, 0, 0));
-        }
+        rb.velocity = new Vector3( h * 5f,  0,  0);
 
         // 當按下空白鍵
         if (Input.GetKeyDown(KeyCode.Space))
