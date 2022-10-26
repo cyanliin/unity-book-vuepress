@@ -1,12 +1,16 @@
 const { defaultTheme } = require('@vuepress/theme-default');
 const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom');
+const { pluginRightAnchor } = require('vuepress-plugin-right-anchor');
 
 module.exports = {
   base: '/unity-book/',
   lang: 'zh-TW',
   title: 'Unity 遊戲開發聖經',
   description: '',
-  plugins: [mediumZoomPlugin({})],
+  plugins: [
+    mediumZoomPlugin({}),
+    ["vuepress-plugin-right-anchor"],
+  ],
   theme: defaultTheme({
     navbar: [
       { text: 'Unity 基礎', link: '/basics/' },
@@ -126,7 +130,7 @@ module.exports = {
           children: [],
         },*/
         {
-          text: '✨Time.deltaTime',
+          text: 'Time.deltaTime',
           link: '/basics/deltatime/deltatime/',
           children: [],
         },
@@ -208,15 +212,15 @@ module.exports = {
           collapsible: true,
           children: [
             {
-              text: '使用 Script 控制',
+              text: '簡易 Script 控制',
               link: '/basics/camera-follow/basic/',
               children: [],
             },
-            // {
-            //   text: '使用 Cinemachine',
-            //   link: '/basics/camera-follow/cinemachine/',
-            //   children: [],
-            // },
+            {
+              text: '✨使用 Cinemachine',
+              link: '/basics/camera-follow/cinemachine/',
+              children: [],
+            },
           ],
         },
         {
@@ -224,13 +228,13 @@ module.exports = {
           collapsible: true,
           children: [
             {
-              text: '使用 Tag 取得',
+              text: '用 Tag 取得其中一個物件',
               link: '/basics/get-object/by-tag/',
               children: [],
             },
             {
-              text: '使用名稱取得',
-              link: '/basics/get-object/by-name/',
+              text: '用 Tag 取得所有物件',
+              link: '/basics/get-object/by-tag-all/',
               children: [],
             },
           ],
@@ -282,12 +286,33 @@ module.exports = {
               children: [],
             },
             {
-              text: '協程 StartCoroutine',
+              text: '協程 Coroutine',
               link: '/basics/timer/coroutine/',
               children: [],
             },
           ],
         },
+        {
+          text: '✨漸進行為',
+          collapsible: true,
+          children: [
+            {
+              text: 'Lerp 解說',
+              link: '/basics/lerp/lerp/',
+              children: [],
+            },
+            {
+              text: 'Lerp 漸進移動',
+              link: '/basics/lerp/lerp-translate/',
+              children: [],
+            },
+            {
+              text: 'Slerp 漸進轉向',
+              link: '/basics/lerp/slerp-lookat/',
+              children: [],
+            },
+          ]
+        }
         /*{
           text: '移動物件',
           collapsible: true,

@@ -36,8 +36,8 @@ Destroy(someBox.gameObject);
 
 ```csharp
 // 保險的刪除物件（先停用，再刪除）
-someBox.gameObject.SetActive(false);
-Destroy(someBox.gameObject);
+gameObject.SetActive(false);
+Destroy(gameObject);
 ```
 
 :::warning 為何不用 DestroyImmediate() ?
