@@ -223,7 +223,7 @@ module.exports = {
           ],
         },
         {
-          text: '✨取得物件',
+          text: '取得在場景上的物件',
           collapsible: true,
           children: [
             {
@@ -239,7 +239,7 @@ module.exports = {
           ],
         },
         {
-          text: '✨複製物件',
+          text: '複製物件',
           collapsible: true,
           children: [
             {
