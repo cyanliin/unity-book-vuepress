@@ -15,8 +15,8 @@ Destroy 是 Unity 中的最基礎物件類別 Object 的靜態方法 (Static Met
 // 將自己刪除
 Destroy(gameObject);
 
-// 停兩秒後，再將自己刪除
-Destroy(gameObject, 2);
+// 停2.5秒後，再將自己刪除
+Destroy(gameObject, 2.5f);
 
 // 刪掉別的物件
 Destroy(someBox.gameObject);
