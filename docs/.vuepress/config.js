@@ -1,6 +1,5 @@
-const { defaultTheme } = require('@vuepress/theme-default');
-const { mediumZoomPlugin } = require('@vuepress/plugin-medium-zoom');
-const { pluginRightAnchor } = require('vuepress-plugin-right-anchor');
+import { defaultTheme } from 'vuepress'
+// import { mediumZoomPlugin } from '@vuepress/plugin-medium-zoom'
 
 module.exports = {
   base: '/unity-book/',
@@ -8,8 +7,8 @@ module.exports = {
   title: 'Unity 遊戲開發聖經',
   description: '',
   plugins: [
-    mediumZoomPlugin({}),
-    ["vuepress-plugin-right-anchor"],
+    //mediumZoomPlugin({}),
+    //["vuepress-plugin-right-anchor"],
   ],
   theme: defaultTheme({
     navbar: [
@@ -135,7 +134,7 @@ module.exports = {
           children: [],
         },
         {
-          text: '碰撞',
+          text: '碰撞偵測',
           collapsible: true,
           children: [
             {
@@ -144,13 +143,13 @@ module.exports = {
               children: [],
             },
             {
-              text: 'Collision',
-              link: '/basics/collide/collision/',
+              text: 'Trigger',
+              link: '/basics/collide/trigger/',
               children: [],
             },
             {
-              text: 'Trigger',
-              link: '/basics/collide/trigger/',
+              text: 'Collision',
+              link: '/basics/collide/collision/',
               children: [],
             },
           ],
