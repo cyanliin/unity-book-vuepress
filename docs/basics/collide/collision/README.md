@@ -23,83 +23,68 @@ public class Ball : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnCollisionEnter(Collision collision)
     {
         // 這邊在碰撞"發生"時會執行一次
     }
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionStay(Collision collision)
     {
         // 這邊在碰撞"持續貼著時"時會持續執行
     }
-    private void OnCollisionExit(Collision other)
+    private void OnCollisionExit(Collision collision)
     {
         // 這邊在碰撞"結束"時會執行一次
     }
 }
 ```
 
+## 回傳參數 collision 的作用
+OnCollision 系列的事件會傳入碰撞資訊 collision，這個參數非常有用，可以需要透過它來取得碰撞相關的各種資訊。
+```csharp
+private void OnCollisionEnter(Collision collision)
+{
+    collision.collider // 對方的 collider
+    collision.gameObject // 對方的 gameObject
+    collision.gameObject.tag // 對方的 tag
+    collision.rigidbody  // 對方的 rigidbody
+    collision.transform // 對方的座標（等於 collision.gameObject.transform）
 
-## 範例
+    // 取得第一個碰撞點座標
+    Vector3 p = collision.GetContact(0).point;
+}
+```
 
-下面範例是用顏色表現碰撞事件觸發時機。
-
-由於地板也屬於可觸發碰撞的物件，所以在碰撞時，使用名稱判斷是否為地板（地板物件需命名為 "Ground"）。
-
-![change-color](./change-color.gif)
+## 範例：碰撞到敵人產生擊中特效
 
 ```csharp
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Ball : MonoBehaviour
+private void OnCollisionEnter(Collision collision)
 {
-    Rigidbody rb;
-    void Start()
+    // 碰撞到敵人
+    if (collision.gameObject.tag == "Enemy")
     {
-        rb = GetComponent<Rigidbody>();
-    }
+        // 取得碰撞點座標
+        Vector3 p = collision.GetContact(0).point;
 
-    void FixedUpdate()
-    {
-        // 取得操控方向
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        // 產生特效物件到碰撞點座標上，0.5秒後刪除
+        GameObject vfx = Instantiate<GameObject>(<<特效物件>>, p, Quaternion.identity);
+        Destroy(vfx, 0.5f);
 
-        // 合成為向量，並且推動
-        Vector3 dir = new Vector3(h, 0, v);
-        Vector3 move = dir.normalized * 100 * Time.deltaTime;
-        rb.AddForce(move);
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        // 碰撞發生時，將自身顏色改為紅色
-        // (但因為下一個 frame 就會執行 OnCollisionStay 而改為綠色
-        // 所以紅色的時間只有 1/30秒，通常看不到）
-        if (other.gameObject.name != "Ground")
-        {
-            GetComponent<MeshRenderer>().material.color = Color.red;
-        }
-    }
-
-    private void OnCollisionStay(Collision other)
-    {
-        // 兩物件持續貼著時，將顏色改為綠色
-        if (other.gameObject.name != "Ground")
-        {
-            GetComponent<MeshRenderer>().material.color = Color.green;
-        }
-    }
-
-    private void OnCollisionExit(Collision other)
-    {
-        // 兩物件的碰撞結束後，將顏色改為灰色
-        if (other.gameObject.name != "Ground")
-        {
-            GetComponent<MeshRenderer>().material.color = Color.gray;
-        }
     }
 }
+```
 
+## CharacterController 的碰撞
+CharacterController 並沒有上述的 OnCollision 系列事件，只能使用另一個叫做 OnControllerColliderHit 的事件來處理。
+:::tip 注意
+OnControllerColliderHit 是在兩物件有接觸就會持續執行，行為上比較像 OnCollisionStay，如果想實現 Enter 和 Leave，則得自己透過程式邏輯去達成了。
+::: 
+
+```csharp
+void OnControllerColliderHit(ControllerColliderHit hit)
+{
+    hit.collider // 對方的 collider
+    hit.gameObject // 對方的 gameObject
+    hit.moveDirection // 碰撞時 ControllerCollider 的行進方向（Vector3)
+    hit.point // 碰撞點座標（Vector3)
+}
 ```

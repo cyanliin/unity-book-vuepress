@@ -29,6 +29,11 @@ public class Ball : MonoBehaviour
     private void OnTriggerEnter(Collider other) 
     {
         // 這邊在"兩物件產生交疊"時會執行一次
+        
+        if (other.gameObject.tag == "Player")
+        {
+            // 如果碰到的物件是 Player 的話...
+        }
     }
 
     private void OnTriggerStay(Collider other) 
@@ -40,6 +45,19 @@ public class Ball : MonoBehaviour
     {
         // 這邊在"兩物件離開交疊"時會執行一次
     }
+}
+```
+
+## 回傳參數 other 的作用
+OnTrigger 系列的事件會傳入碰撞對象的 collider 名為 other，這個參數非常有用，可以需要透過它來取得碰撞對象的各種資訊。
+```csharp
+private void OnTriggerEnter(Collider other) 
+{
+    other.gameObject // 對方的 gameObject
+    other.tag  // 對方的tag（等於 other.gameObject.tag）
+    other.name // 對方的名稱（等於 other.gameObject.name）
+    other.transform // 對方的座標（等於 other.gameObject.transform）
+    other.attachedRigidbody  // 對方的 Rigidbody
 }
 ```
 
@@ -77,7 +95,7 @@ public class Ball : MonoBehaviour
         // 將自身顏色改為紅色
         // (由於接著會執行 OnTriggerStay
         // 到了算圖時，球體已經設為綠色，所以並不會看見紅色)
-        if (other.gameObject.name == "Box")
+        if (other.gameObject.tag == "Box")
         {
             GetComponent<MeshRenderer>().material.color = Color.red;
         }
@@ -86,7 +104,7 @@ public class Ball : MonoBehaviour
     {
         // 當兩物件交疊時，持續執行
         // 將自身顏色改為綠色
-        if (other.gameObject.name == "Box")
+        if (other.gameObject.tag == "Box")
         {
             GetComponent<MeshRenderer>().material.color = Color.green;
         }
@@ -95,7 +113,7 @@ public class Ball : MonoBehaviour
     {
         // 當兩物件不再交疊時，執行一次
         // 將自身顏色改為灰色
-        if (other.gameObject.name == "Box")
+        if (other.gameObject.tag == "Box")
         {
             GetComponent<MeshRenderer>().material.color = Color.gray;
         }
