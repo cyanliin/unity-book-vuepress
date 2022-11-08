@@ -134,6 +134,33 @@ module.exports = {
           children: [],
         },
         {
+          text: '✨旋轉物件',
+          collapsible: true,
+          link: '/basics/rotation/',
+          children: [],
+        },
+        {
+          text: '✨漸進行為',
+          collapsible: true,
+          children: [
+            {
+              text: 'Lerp 解說',
+              link: '/basics/lerp/lerp/',
+              children: [],
+            },
+            {
+              text: 'Lerp 漸進移動',
+              link: '/basics/lerp/lerp-translate/',
+              children: [],
+            },
+            {
+              text: 'Slerp 漸進轉向',
+              link: '/basics/lerp/slerp-lookat/',
+              children: [],
+            },
+          ]
+        },
+        {
           text: '碰撞偵測',
           collapsible: true,
           children: [
@@ -216,7 +243,7 @@ module.exports = {
               children: [],
             },
             {
-              text: '✨使用 Cinemachine',
+              text: '使用 Cinemachine',
               link: '/basics/camera-follow/cinemachine/',
               children: [],
             },
@@ -255,7 +282,7 @@ module.exports = {
           ],
         },
         {
-          text: '✨移除物件',
+          text: '刪除物件',
           collapsible: true,
           children: [
             {
@@ -271,7 +298,7 @@ module.exports = {
           ],
         },
         {
-          text: '✨計時器、延遲',
+          text: '計時器、延遲',
           collapsible: true,
           children: [
             {
@@ -291,27 +318,7 @@ module.exports = {
             },
           ],
         },
-        {
-          text: '✨漸進行為',
-          collapsible: true,
-          children: [
-            {
-              text: 'Lerp 解說',
-              link: '/basics/lerp/lerp/',
-              children: [],
-            },
-            {
-              text: 'Lerp 漸進移動',
-              link: '/basics/lerp/lerp-translate/',
-              children: [],
-            },
-            {
-              text: 'Slerp 漸進轉向',
-              link: '/basics/lerp/slerp-lookat/',
-              children: [],
-            },
-          ]
-        }
+
         /*{
           text: '移動物件',
           collapsible: true,
